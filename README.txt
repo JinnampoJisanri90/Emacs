@@ -104,11 +104,16 @@ Navigate
 
 
 Editing
-    Indent
-        CTRL_c SHIFT_>
+    elpy-enable
+        Indent
+            CTRL_c SHIFT_>
 
-    Unindent
-        CTRL_c SHIFT_<
+        Unindent
+            CTRL_c SHIFT_<
+
+    Mark(Select) then
+        Indent  : C-u  4 C-x TAB
+        Unindent: C-u -4 C-x TAB
 
     New line
         cursor 와 함께 개행
@@ -225,7 +230,7 @@ Mode
         sudo apt install elpa-elpy
         sudo apt install python3-jedi black python3-autopep8 yapf3 python3-yapf
 
-        elpy-enable
+        M_x elpy-enable
 
         elpy-shell-send-region-or-buffer
             CTRL_c CTRL_c
