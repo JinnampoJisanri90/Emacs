@@ -37,6 +37,10 @@ Configure
     To turn off autosave
         M_x customize-option RET auto-save-default RET
 
+    Indent
+        M_x customize-option RET indent-tabs-mode
+        M_x customize-option RET tab-width
+
     ERC server
         M_x customize-option RET erc-server RET
 
@@ -86,13 +90,11 @@ Save/Save as
 
 Navigate
     move-beginning-of-line 
+    beginning-of-line
         CTRL_a
 
     back-to-indentation(현재 줄의 글자 시작점으로 이동)
         M_m 
-
-    beginning-of-line
-        CTRL_a
 
     Page down
         CTRL_v
