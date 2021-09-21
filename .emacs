@@ -9,19 +9,21 @@
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(auto-save-default nil)
  '(browse-url-browser-function (quote browse-url-chrome))
- '(cua-mode t nil (cua-base))
- '(custom-enabled-themes (quote (tsdh-dark)))
+ '(cua-mode nil (cua-base))
  '(delete-selection-mode t)
  '(ediff-diff-options "-w")
  '(erc-server "irc.libera.chat")
  '(fill-prefix "")
  '(indent-tabs-mode nil)
  '(make-backup-files nil)
- '(package-selected-packages (quote (company graphviz-dot-mode ## tuareg)))
+ '(package-selected-packages
+   (quote (xclip company graphviz-dot-mode ## tuareg))
+  )
  '(select-enable-primary t)
  '(show-paren-mode t)
  '(tab-width 4)
- '(truncate-lines t))
+ '(truncate-lines t)
+ '(xclip-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
