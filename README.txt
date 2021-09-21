@@ -38,6 +38,7 @@ Index
         whitespace-mode
         read-only-mode
         graphviz-dot-mode
+    GNU Emacs Lisp Package Archive
     Window
     Frame
     Help
@@ -67,9 +68,13 @@ Configure
 
     Word wrap
         M_x customize-option RET truncate-lines RET
+        M_x toggle-truncate-lines RET
 
     Browser
-        M_x customize-variable RET browse-url-browser-function RET 
+        M_x customize-variable RET browse-url-browser-function RET
+
+    Copy/paste
+        M_x customize-variable RET delete-selection-mode RET
 
     (
     for temporary use
@@ -437,6 +442,13 @@ Mode
 
         invoke an external viewer
             CTRL_c v (graphviz-dot-view)
+
+
+GNU Emacs Lisp Package Archive
+    http://elpa.gnu.org/
+        https://company-mode.github.io/    
+        M_x list-packages
+        M_x package-install RET company RET
 
 
 Window
