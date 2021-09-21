@@ -9,13 +9,18 @@ Index
     Misc.
         Line number
         ispell-complete-word
+        browse-url
+        Font size
     New
     File
-    Save/Save as
+    File manager
+    Save/SaveAs
     Navigate
     Editing
-        Indent
-        Unindent
+        elpy-enable
+            Indent
+            Unindent
+        4 space indent/deindent
         New line
         Undo, redo
         Reload
@@ -23,12 +28,15 @@ Index
         Find/search
         Substitution
         Execute
+    Repeat
     Macros
     Mode
         elpa-elpy
         org_mode
     Window
     Frame
+    Help
+
 
 
 Configure
@@ -54,8 +62,15 @@ Configure
     Word wrap
         M_x customize-option RET truncate-lines RET
 
-    (for temporary use
-     M_x set-variable RET select-enable-clipboard RET t RET)
+    Browser
+        M_x customize-variable RET browse-url-browser-function RET 
+
+    (
+    for temporary use
+        M_x set-variable RET select-enable-clipboard RET t RET
+    inline
+        setq select-enable-clipboard t
+    )
 
 
 Misc.
@@ -65,27 +80,48 @@ Misc.
     ispell-complete-word
         CTRL_M_i
 
+    browse-url
+        M_x browse-url
+
+    Font size
+        C-x C--
+        C-x C-S-+
 
 New
     CTRL_x b named_buffer <RET>
 
     Rename buffer
-        M_x new_buffer_name
+        M_x rename-buffer
 
 
 File
     CTRL_x CTRL_f
 
-    dired
-        M_dired
+
+File manager
+    M_dired
+        R       Rename/move file
+        D       Delete file
+        +       Create DIR.
+        q       Close
+        C       Copy file
+        Z       Compress/decompress the file by gzip
+
+        m       Mark a file
+        u       Unmark
+        U       Unmark all marked
+        %m      Mark by pattern (regex)
+
+        g       Refresh listing
+        ^       Go to parent dir
 
 
-Save/Save as
+Save/SaveAs
     Save
         CTRL_x CTRL_s
         CTRL_x s
 
-    Save as
+    SaveAs
         CTRL_x CTRL_w
 
 
@@ -96,6 +132,18 @@ Navigate
 
     back-to-indentation(현재 줄의 글자 시작점으로 이동)
         M_m 
+
+    Beginning of statement
+        M_a
+
+    End of statement
+        M_e
+
+    Goto start of page
+        M_SHIFT_<
+
+    Goto end of page
+        M_SHIFT_>
 
     Page down
         CTRL_v
@@ -112,19 +160,21 @@ Editing
         Unindent
             CTRL_c SHIFT_<
 
-    Mark(Select) then
-        Indent  : C-u  4 C-x TAB
-        Unindent: C-u -4 C-x TAB
+    4 space indent/deindent
+        Select multiply lines
+        Indent  : CTRL_u  4 CTRL_x TAB
+        Unindent: CTRL_u -4 CTRL_x TAB
 
     New line
-        cursor 와 함께 개행
+        line 끝에서 개행
+            CTRL_e CTRL_m
+
+        cursor와 함께 개행
             CTRL_j
 
         cursor 고정 아랫줄 개행
             CTRL_o
 
-        line 끝에서 개행
-            CTRL_e CTRL_m
 
     Undo, redo
         toggle undo/redo
@@ -134,7 +184,7 @@ Editing
             CTRL_/
 
     Reload
-        M-x revert-buffer
+        M_x revert-buffer
 
     Select, copy, paste
         Visual mode
@@ -143,6 +193,12 @@ Editing
 
         Select all
             CTRL_x h
+
+        Select paragraph
+            M_h
+
+        Select page
+            CTRL_x CTRL_p
 
         Copy
             M_w
@@ -161,46 +217,46 @@ Editing
 
     Find/search
         search forward
-            C-s, M-x isearch-forward
-            C-s to next
-            C-r to previous
+            CTRL_s, M_x isearch-forward
+            CTRL_s to next
+            CTRL_r to previous
 
         search backward
-            C-r, M-x isearch-backward
-            C-s to next
-            C-r to previous
+            CTRL_r, M_x isearch-backward
+            CTRL_s to next
+            CTRL_r to previous
 
         to stop
             RET
 
         search-string forward
-            C-s RET search-string RET
+            CTRL_s RET search-string RET
 
         search-string backward
-            C-r RET search-string RET
+            CTRL_r RET search-string RET
 
 
         커서가 위치한 단어를 탐색 문자열로 사용
-            C-s C-w
+            CTRL_s CTRL_w
 
         커서가 위치한 줄을 탐색 문자열로 사용
-            C-s C-y
+            CTRL_s CTRL_y
 
         탐색을 반복한다.
-            C-s C-s
+            CTRL_s CTRL_s
 
 
         search for regular expression forward
-            ESC C-s
+            ESC CTRL_s
 
         search for regular expression backward
-            ESC C-r
+            ESC CTRL_r
 
         incremental search
-            ESC C-s
+            ESC CTRL_s
 
         incremental search backwards
-            ESC C-r
+            ESC CTRL_r
 
 
     Substitution
@@ -215,7 +271,7 @@ Editing
             RET or q        quit
 
         Search and replace
-            M-x query-replace-regexp
+            M_x query-replace-regexp
 
 
     Execute
@@ -226,6 +282,20 @@ Editing
 Mode
     To get the current major mode
         CTRL_h m
+
+    M_x fundamental-mode
+    M_x asm-mode
+    M_x c-mode
+    M_x c++-mode
+    M_x css-mode
+    M_x fortran-mode
+    M_x java-mode
+    M_x javascript-mode
+    M_x lisp-mode
+    M_x lisp-interaction-mode
+    M_x python-mode
+    M_x perl-mode
+    M_x ruby-mode
 
     elpa-elpy
         sudo apt install elpa-elpy
@@ -245,11 +315,37 @@ Mode
     org_mode
         M_x org-mode
 
+        create table
+            CTRL_c |
+
+        insert new column
+            | <TAB>
+
+        insert new row
+            CTRL_c <RET>
+
+        insert column
+            M_S-<left|right>
+
+        move column
+            M_<up|down|left|right>
+
+        Escape pipe-character in org-mode
+            \vert for the pipe.
+
+        org-export-as-html-to-buffer
+            CTRL_c CTRL_e h H
+
+
+Repeat
+    C-x z
+    Once you pressed it, just press only z after that and
+
 
 Macros
     F3 insert someting F4
     F4
-    M-3 F4 for 3 times repeat
+    M_3 F4 for 3 times repeat
 
 
 Window
@@ -259,6 +355,9 @@ Window
     split-window-vertically
         CTRL_x 2
 
+    close all but one
+        CTRL_x 1
+
     switching window
         CTRL_x o
 
@@ -267,6 +366,21 @@ Window
         CTRL_x_b
         CTRL_x <right> (next-buffer)
         CTRL_x <left>  (previous-buffer)
+
+        meaning of symbol
+            %   읽기 전용
+            *   수정
+            D   삭제 표시
+
+        in ibuffer(buffer list)
+            open in another window  : o
+            open in current window  : f
+            find buffer             : j
+            mark/unmark             : m u
+            mark kill and execute   : d x
+            mark and kill           : m k
+            mark and open all       : m v
+            quit                    : q
 
     resize
         resize vertical window
@@ -304,4 +418,19 @@ Frame
     close this frame
         CTRL_x 5 0
 
+
+Help
+    index                               C-h i, C-h ?
+    command                             C-h
+    function                            C-h f
+    describe key(short)                 C-h c
+    describe key(full)                  C-h k <key>    e.g. C-h k C-h i 또는 C-h k C-x i
+    tutorial                            C-h t
+    where is command                    C-h w
+    describe variable                   C-h v
+    key translations                    C-h b
+    find documentation for command      C-h F
+    find packages by topic keyword      C-h p
+    ...
+    quit from help                      q
 
