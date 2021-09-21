@@ -70,25 +70,24 @@ Configure
 
     Word wrap
         M_x customize-option RET truncate-lines RET
-        M_x toggle-ptruncate-lines RET
+        M_x toggle-truncate-lines RET
 
+    To show matching parenthesis
+        M_x customize-variable RET show-paren-mode RET
+        
     Browser
         M_x customize-variable RET browse-url-browser-function RET
 
     Copy/paste
-        M_x customize-variable RET cua-mode RET
         M_x customize-variable RET delete-selection-mode RET
 
     ediff
         M_x customize-variable RET ediff-diff-options RET -w
 
-    (
-    for temporary use
+    Etc.(syntax)
         M_x set-variable RET select-enable-clipboard RET t RET
-    inline
         setq select-enable-clipboard t
-    )
-
+    
 
 Misc.
     Line number
@@ -107,8 +106,10 @@ Misc.
     Man page
         CTRL_h F    
 
+
 New
-    CTRL_x (RELEASE CTRL)b named_buffer <RET>
+    Switch to buffer prompt
+        CTRL_x (RELEASE CTRL) b named_buffer <RET>
 
     Rename buffer
         M_x rename-buffer
@@ -201,11 +202,11 @@ Editing
     4 space indent/deindent
         M_i
         
-        Select, from the beginning of the line to the end, multiple lines
+        Region first, the beginning of the line to the end, multiple lines
         Indent  : CTRL_u  4 CTRL_x TAB
         Unindent: CTRL_u -4 CTRL_x TAB
 
-        Select
+        Region fist
         CTRL_x TAB
         Use arrows to indent interactively
         
@@ -228,7 +229,6 @@ Editing
         cursor 고정 아랫줄 개행
             CTRL_o
 
-
     Undo, redo
         toggle undo/redo
             CTRL_r
@@ -243,7 +243,10 @@ Editing
 
     overwrite-mode
         M_x ov
-        
+
+    M-\
+        Delete spaces and tabs around point
+
     Select, copy, paste
         Visual mode
             CTRL_SPACE CTRL_SPACE
@@ -256,13 +259,23 @@ Editing
             CTRL_x h
 
         Space까지 선택
-            CTRL_M SPC
+            CTRL_M SPACE
             
         Select paragraph
             M_h
 
         Select page
             CTRL_x CTRL_p
+
+        rectangle-mark-mode
+            CTRL_x SPACE
+        
+        cua-selection-mode
+        cua-mode
+            M_x cua-selection-mode
+            
+            M_x cua-set-rectangle-mark
+            CTRL_Enter(in some mode)
 
         Copy
             M_w
@@ -275,11 +288,6 @@ Editing
         Cut
             CTRL_w
 
-        cua-selection-mode
-            M_x cua-selection-mode
-            
-            M_x cua-set-rectangle-mark
-            CTRL_Enter(in some mode)
 
     Find/search
         search forward
@@ -456,6 +464,7 @@ Mode
 
         M_x comment-region/M_x uncomment-region
             CTRL_x CTRL_;
+            M_;
 
         Completion
             company-complete
@@ -470,7 +479,7 @@ Mode
             CTRL_x `
 
         invoke an external viewer
-            CTRL_c v (graphviz-dot-view)
+            CTRL_c CTRL_v (graphviz-dot-view)
 
     ediff
         ediff-buffers
@@ -509,13 +518,13 @@ Window
 
         in ibuffer(buffer list)
             update                  : g
-            open in another window  : o
             open in current window  : f
-            find buffer             : j
+            open in another window  : o            
+            mark and open all       : m v
+            
             mark/unmark             : m u
             mark kill and execute   : d x
-            mark and kill           : m k
-            mark and open all       : m v
+
             quit                    : q
 
     resize
