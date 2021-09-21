@@ -16,7 +16,6 @@ Index
         Character info
         To get current line
         count-word
-        Encoding
     New
     File
     File manager
@@ -68,6 +67,8 @@ Configure
     ERC server
         M_x customize-option RET erc-server RET
         M_x customize-option RET erc-server-coding-system RET
+			utf-8-with-signature
+			utf-8-auto
 
     Customize-themes
         M_x customize-themes
@@ -129,10 +130,6 @@ Misc.
 
         region first
         M_=
-
-    Encoding
-        utf-8-with-signature
-        utf-8-auto
 
 New
     Switch to buffer prompt
