@@ -23,6 +23,7 @@ Index
         Find/search
         Substitution
         Execute
+    Macros
     Mode
         elpa-elpy
         org_mode
@@ -243,6 +244,12 @@ Mode
 
     org_mode
         M_x org-mode
+
+
+Macros
+    F3 insert someting F4
+    F4
+    M-3 F4 for 3 times repeat
 
 
 Window
