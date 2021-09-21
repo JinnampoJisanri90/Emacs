@@ -61,6 +61,7 @@ Configure
 
     ERC server
         M_x customize-option RET erc-server RET
+        M_x customize-option RET erc-server-coding-system RET
 
     Customize-themes
         M_x customize-themes
@@ -183,7 +184,7 @@ Navigate
         CTRL_M_k
 
     Cursor reposition
-        M_r
+        M_r(use with CTRL_l)
         
     Beginning of statement
         M_a
@@ -259,12 +260,12 @@ Editing
         Select all
             CTRL_x h
 
-        Space까지 선택
-            CTRL_M SPACE
-            
         Select paragraph
             M_h
 
+        Space까지 선택
+            CTRL_M SPACE
+            
         Select page
             CTRL_x CTRL_p
 
@@ -362,7 +363,7 @@ Editing
             display the output
 
         replaces the region with the output
-            CTRL_u M_| cmd RET
+            CTRL_u M_SHIFT_| cmd RET
         
 
 Mode
@@ -554,6 +555,7 @@ Window
 Frame
     make-frame-command
         CTRL_x 5 2
+        CTRL_x 5 b        
 
     find-file-other-frame
         CTRL_x 5 f
