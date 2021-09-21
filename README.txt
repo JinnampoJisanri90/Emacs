@@ -21,6 +21,8 @@ Index
             Indent
             Unindent
         4 space indent/deindent
+        Repeat
+        Macro
         New line
         Undo, redo
         Reload
@@ -28,11 +30,11 @@ Index
         Find/search
         Substitution
         Execute
-    Repeat
-    Macros
     Mode
         elpa-elpy
         org_mode
+        whitespace-mode
+        read-only-mode
     Window
     Frame
     Help
@@ -49,6 +51,7 @@ Configure
     Indent
         M_x customize-option RET indent-tabs-mode
         M_x customize-option RET tab-width
+        M_x customize-option RET fill-prefix(set-fill-prefix)
 
     ERC server
         M_x customize-option RET erc-server RET
@@ -117,10 +120,12 @@ File manager
 
 
 Save/SaveAs
-    Save
-        CTRL_x CTRL_s
+    Save(Ask question)    
         CTRL_x s
 
+    Save
+        CTRL_x CTRL_s
+        
     SaveAs
         CTRL_x CTRL_w
 
@@ -161,9 +166,20 @@ Editing
             CTRL_c SHIFT_<
 
     4 space indent/deindent
-        Select multiply lines
+        M_i
+        
+        Select, from the beginning of the line to the end, multiple lines
         Indent  : CTRL_u  4 CTRL_x TAB
         Unindent: CTRL_u -4 CTRL_x TAB
+
+    Repeat
+        C-x z
+        Once you pressed it, just press only z after that and
+
+    Macros
+        F3 insert someting F4
+        F4
+        M_3 F4 for 3 times repeat
 
     New line
         line 끝에서 개행
@@ -191,6 +207,9 @@ Editing
             CTRL_SPACE CTRL_SPACE
             CTRL_@ CTRL_@
 
+        Select again
+            CTRL_x CTRL_x
+    
         Select all
             CTRL_x h
 
@@ -206,7 +225,7 @@ Editing
         Paste
             CTRL_y
             M_x yank
-            SHIFT-INSERT
+            SHIFT_INSERT
 
         Cut
             CTRL_w
@@ -275,9 +294,17 @@ Editing
 
 
     Execute
-        M_| cmd RET
-        python RET
+        shell-command-on-region
+            M_SHIFT_| cmd RET
+            Run with region contents as input
+            
+        shell-command
+            M_SHIFT_! cmd RET
+            display the output
 
+        replaces the region with the output
+            CTRL_u M_| cmd RET
+        
 
 Mode
     To get the current major mode
@@ -335,17 +362,12 @@ Mode
 
         org-export-as-html-to-buffer
             CTRL_c CTRL_e h H
-
-
-Repeat
-    C-x z
-    Once you pressed it, just press only z after that and
-
-
-Macros
-    F3 insert someting F4
-    F4
-    M_3 F4 for 3 times repeat
+     
+    white-space-mode
+        white-space-mode
+    
+    read-only-mode
+        CTRL_x CTRL_q
 
 
 Window
@@ -362,10 +384,17 @@ Window
         CTRL_x o
 
     switching buffer
-        CTRL_x (RELEASE CTRL) b or ibuffer
-        CTRL_x_b
-        CTRL_x <right> (next-buffer)
-        CTRL_x <left>  (previous-buffer)
+        ibuffer
+        
+        Show 'Switch to buffer prompt'
+             CTRL_x (RELEASE CTRL) b
+        
+        Open ibuffer in another window
+             CTRL_x_b
+
+        Rotate buffer in current window
+            CTRL_x <right> (next-buffer)
+            CTRL_x <left>  (previous-buffer)
 
         meaning of symbol
             %   읽기 전용
@@ -373,6 +402,7 @@ Window
             D   삭제 표시
 
         in ibuffer(buffer list)
+            update                  : g
             open in another window  : o
             open in current window  : f
             find buffer             : j
