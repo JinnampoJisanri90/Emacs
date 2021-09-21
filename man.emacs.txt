@@ -27,6 +27,7 @@ Index
         New line
         Undo, redo
         Reload
+        overwrite-mode
         Select, copy, paste
         Find/search
         Substitution
@@ -37,8 +38,9 @@ Index
         dot
         whitespace-mode
         read-only-mode
+        company-mode        
         graphviz-dot-mode
-    GNU Emacs Lisp Package Archive
+        ediff
     Window
     Frame
     Help
@@ -68,13 +70,17 @@ Configure
 
     Word wrap
         M_x customize-option RET truncate-lines RET
-        M_x toggle-truncate-lines RET
+        M_x toggle-ptruncate-lines RET
 
     Browser
         M_x customize-variable RET browse-url-browser-function RET
 
     Copy/paste
+        M_x customize-variable RET cua-mode RET
         M_x customize-variable RET delete-selection-mode RET
+
+    ediff
+        M_x customize-variable RET ediff-diff-options RET -w
 
     (
     for temporary use
@@ -229,10 +235,15 @@ Editing
 
         undo/redo
             CTRL_/
+            CTRL_SHIFT _
+            CTRL_x u
 
     Reload
         M_x revert-buffer
 
+    overwrite-mode
+        M_x ov
+        
     Select, copy, paste
         Visual mode
             CTRL_SPACE CTRL_SPACE
@@ -266,7 +277,9 @@ Editing
 
         cua-selection-mode
             M_x cua-selection-mode
+            
             M_x cua-set-rectangle-mark
+            CTRL_Enter(in some mode)
 
     Find/search
         search forward
@@ -278,6 +291,9 @@ Editing
             CTRL_r, M_x isearch-backward
             CTRL_s to next
             CTRL_r to previous
+
+        To search current word under cursor
+            ALT_s .
 
         to stop
             RET
@@ -403,6 +419,16 @@ Mode
     read-only-mode
         CTRL_x CTRL_q
 
+    company-mode
+        https://company-mode.github.io/
+            GNU Emacs Lisp Package Archive
+            http://elpa.gnu.org/
+
+            M_x list-packages
+            M_x package-install RET company RET
+
+            M_x company-mode
+
     graphviz-dot-mode
         https://ppareit.github.io/graphviz-dot-mode/
         https://github.com/ppareit/graphviz-dot-mode
@@ -428,6 +454,9 @@ Mode
         Indent the line
             TAB
 
+        M_x comment-region/M_x uncomment-region
+            CTRL_x CTRL_;
+
         Completion
             company-complete
 
@@ -443,13 +472,9 @@ Mode
         invoke an external viewer
             CTRL_c v (graphviz-dot-view)
 
-
-GNU Emacs Lisp Package Archive
-    http://elpa.gnu.org/
-        https://company-mode.github.io/    
-        M_x list-packages
-        M_x package-install RET company RET
-
+    ediff
+        ediff-buffers
+        
 
 Window
     split-window-horizontally
