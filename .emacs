@@ -19,6 +19,7 @@
  '(erc-port 6666)
  '(erc-prompt-for-password nil)
  '(erc-server "irc.libera.chat")
+ '(erc-server-coding-system (quote utf-8))
  '(fill-prefix "")
  '(indent-tabs-mode nil)
  '(make-backup-files nil)
@@ -28,6 +29,7 @@
  '(tab-width 4)
  '(truncate-lines t)
  '(xclip-mode nil))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
