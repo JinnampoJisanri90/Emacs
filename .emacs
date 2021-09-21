@@ -11,14 +11,14 @@
  '(browse-url-browser-function (quote browse-url-chrome))
  '(cua-enable-cua-keys nil)
  '(cua-mode t nil (cua-base))
- '(custom-enabled-themes (quote (deeper-blue)))
+ '(custom-enabled-themes (quote (tango)))
  '(delete-selection-mode t)
  '(desktop-save-mode nil)
  '(ediff-diff-options "-w")
- '(erc-server "irc.libera.chat")
- '(erc-port 6666)
  '(erc-nick "koowgnojeel")
+ '(erc-port 6666)
  '(erc-prompt-for-password nil)
+ '(erc-server "irc.libera.chat")
  '(fill-prefix "")
  '(indent-tabs-mode nil)
  '(make-backup-files nil)
@@ -49,4 +49,5 @@
              (setq graphviz-dot-indent-width 4))
 (use-package company-graphviz-dot)
 
-
+;; To filter out
+;;     M-x keep-lines with argument ^[A-Z ]+$

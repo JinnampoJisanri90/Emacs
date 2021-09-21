@@ -35,6 +35,7 @@ Index
         Select, copy, paste
         Find/search
         Substitution
+        Letter case
         Execute
     Mode
         elpa-elpy
@@ -205,8 +206,14 @@ Navigate
     ()안에서 삭제
         CTRL_M_k
 
-    Cursor reposition
-        M_r(use with CTRL_l)
+    Move cursor position
+        M_r
+        
+    Position the screen
+        CTRL_l
+        
+    Positions the current line at the top
+        M_0 CTRL_l
         
     Beginning of statement
         M_a
@@ -338,7 +345,6 @@ Editing
         search-string backward
             CTRL_r RET search-string RET
 
-
         커서가 위치한 단어를 탐색 문자열로 사용
             CTRL_s CTRL_w
 
@@ -348,19 +354,11 @@ Editing
         탐색을 반복한다.
             CTRL_s CTRL_s
 
+        search for forward
+            CTRL_s
 
-        search for regular expression forward
-            ESC CTRL_s
-
-        search for regular expression backward
-            ESC CTRL_r
-
-        incremental search
-            ESC CTRL_s
-
-        incremental search backwards
-            ESC CTRL_r
-
+        search for backward
+            CTRL_r
 
     Substitution
         M_x query-replace-regexp
@@ -376,7 +374,13 @@ Editing
             ^               back to previous match
             RET or q        quit
 
-
+    Letter case
+        upcase-word
+            M_u
+        
+        downcase-word
+            M_d
+        
     Execute
         shell-command-on-region
             M_SHIFT_| cmd RET
@@ -523,6 +527,10 @@ Window
 
     switching window
         CTRL_x o
+        M_x wind-down
+        M_x wind-up
+        M_x wind-left
+        M_x wind-right
 
     switching buffer
         ibuffer
