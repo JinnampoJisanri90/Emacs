@@ -51,3 +51,7 @@
 
 ;; To filter out
 ;;     M-x keep-lines with argument ^[A-Z ]+$
+
+;; How to make Emacs read buffer from stdin on start?
+;;     emacs --insert <(echo 123)
+
