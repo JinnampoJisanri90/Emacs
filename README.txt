@@ -144,17 +144,17 @@ Navigate
     back-to-indentation(현재 줄의 글자 시작점으로 이동)
         M_m 
 
-    Beginning of statement
-        M_a
-
-    End of statement
-        M_e
-
     Goto start of page
         M_SHIFT_<
 
     Goto end of page
         M_SHIFT_>
+
+    Goto line
+        M_g M_g 1
+
+    Goto column
+        M_g TAB 0
 
     Page down
         CTRL_v
@@ -163,11 +163,21 @@ Navigate
         M_v
 
     ()안에서 이동
-        C-M-f
-        C-M-b
+        CTRL_M_f
+        CTRL_M_b
 
     ()안에서 삭제
-        C-M-k
+        CTRL_M_k
+
+    Cursor reposition
+        M_r
+        
+    Beginning of statement
+        M_a
+
+    End of statement
+        M_e
+
 
 Editing
     elpy-enable
@@ -408,7 +418,7 @@ Mode
 
 
         Indent the graph
-            C-M-q
+            CTRL_M_q
 
         Indent the line
             TAB
@@ -417,16 +427,16 @@ Mode
             company-complete
 
         Compiling
-            C-c C-c
+            CTRL_c CTRL_c
 
         Compile and preview
-            C-c C-p (graphviz-dot-preview)
+            CTRL_c CTRL_p (graphviz-dot-preview)
 
         Go to the next error
-            C-x `
+            CTRL_x `
 
         invoke an external viewer
-            C-c v (graphviz-dot-view)
+            CTRL_c v (graphviz-dot-view)
 
 
 Window
