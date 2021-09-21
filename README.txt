@@ -11,6 +11,7 @@ Index
         ispell-complete-word
         browse-url
         Font size
+        Man page
     New
     File
     File manager
@@ -33,8 +34,10 @@ Index
     Mode
         elpa-elpy
         org_mode
+        dot
         whitespace-mode
         read-only-mode
+        graphviz-dot-mode
     Window
     Frame
     Help
@@ -87,11 +90,14 @@ Misc.
         M_x browse-url
 
     Font size
-        C-x C--
-        C-x C-S-+
+        CTRL_x CTRL_-
+        CTRL_x CTRL_S-+
+        
+    Man page
+        CTRL_h F    
 
 New
-    CTRL_x b named_buffer <RET>
+    CTRL_x (RELEASE CTRL)b named_buffer <RET>
 
     Rename buffer
         M_x rename-buffer
@@ -156,6 +162,12 @@ Navigate
     Page up
         M_v
 
+    ()안에서 이동
+        C-M-f
+        C-M-b
+
+    ()안에서 삭제
+        C-M-k
 
 Editing
     elpy-enable
@@ -172,8 +184,12 @@ Editing
         Indent  : CTRL_u  4 CTRL_x TAB
         Unindent: CTRL_u -4 CTRL_x TAB
 
+        Select
+        CTRL_x TAB
+        Use arrows to indent interactively
+        
     Repeat
-        C-x z
+        CTRL_x z
         Once you pressed it, just press only z after that and
 
     Macros
@@ -213,6 +229,9 @@ Editing
         Select all
             CTRL_x h
 
+        Space까지 선택
+            CTRL_M SPC
+            
         Select paragraph
             M_h
 
@@ -279,18 +298,18 @@ Editing
 
 
     Substitution
-        Query replace
+        M_x query-replace-regexp
+        
+        M_x query-replace
             M_SHIFT_%
-            Space || y      replace this occurence
-            Del || n        skip
+
+            Space or y      replace this occurence
+            Del or n        skip
             .               replace current one and exit
             ,               replace and pause (resume with Space or y)
             !               replace all following occurences
             ^               back to previous match
             RET or q        quit
-
-        Search and replace
-            M_x query-replace-regexp
 
 
     Execute
@@ -368,6 +387,46 @@ Mode
     
     read-only-mode
         CTRL_x CTRL_q
+
+    graphviz-dot-mode
+        https://ppareit.github.io/graphviz-dot-mode/
+        https://github.com/ppareit/graphviz-dot-mode
+
+        .emacs
+            (require 'package)
+            (add-to-list 'package-archives
+                         '("melpa" . "https://melpa.org/packages/"))
+            (package-initialize)
+            (unless (package-installed-p 'use-package)
+              (package-refresh-contents)
+              (package-install 'use-package))
+            (use-package graphviz-dot-mode
+                         :ensure t
+                         :config
+                         (setq graphviz-dot-indent-width 4))
+            (use-package company-graphviz-dot)
+
+
+        Indent the graph
+            C-M-q
+
+        Indent the line
+            TAB
+
+        Completion
+            company-complete
+
+        Compiling
+            C-c C-c
+
+        Compile and preview
+            C-c C-p (graphviz-dot-preview)
+
+        Go to the next error
+            C-x `
+
+        invoke an external viewer
+            C-c v (graphviz-dot-view)
 
 
 Window
@@ -450,17 +509,17 @@ Frame
 
 
 Help
-    index                               C-h i, C-h ?
-    command                             C-h
-    function                            C-h f
-    describe key(short)                 C-h c
-    describe key(full)                  C-h k <key>    e.g. C-h k C-h i 또는 C-h k C-x i
-    tutorial                            C-h t
-    where is command                    C-h w
-    describe variable                   C-h v
-    key translations                    C-h b
-    find documentation for command      C-h F
-    find packages by topic keyword      C-h p
+    index                               CTRL_h i, CTRL_h ?
+    command                             CTRL_h
+    function                            CTRL_h f
+    describe key(short)                 CTRL_h c
+    describe key(full)                  CTRL_h k <key>    e.g. CTRL_h k CTRL_h i 또는 CTRL_h k CTRL_x i
+    tutorial                            CTRL_h t
+    where is command                    CTRL_h w
+    describe variable                   CTRL_h v
+    key translations                    CTRL_h b
+    find documentation for command      CTRL_h F
+    find packages by topic keyword      CTRL_h p
     ...
     quit from help                      q
 
