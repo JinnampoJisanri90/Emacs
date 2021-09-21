@@ -4,6 +4,7 @@ Index
         To turn off autosave
         ERC server
         Customize-themes
+        To save session
         Clipboard
         Word wrap
     Misc.
@@ -42,6 +43,7 @@ Index
         graphviz-dot-mode
         ediff
     Window
+    desktop-save-mode
     Frame
     Help
 
@@ -65,6 +67,9 @@ Configure
 
     Customize-themes
         M_x customize-themes
+
+    To save session
+        M_x customize-option RET desktop-save-mode RET
 
     Clipboard
         M_x customize-variable RET select-enable-clipboard RET
@@ -554,6 +559,10 @@ Window
         balance-windows
             CTRL_x +
 
+desktop-save-mode
+    M-x desktop-save
+    M-x desktop-change-dir
+    M-x desktop-clear 
 
 Frame
     make-frame-command
