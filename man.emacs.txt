@@ -502,7 +502,10 @@ Window
 
     switching buffer
         ibuffer
-        
+
+        switch-to-buffer-other-window
+            CTRL_x 4 b
+            
         Show 'Switch to buffer prompt'
              CTRL_x (RELEASE CTRL) b
         
