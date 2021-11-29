@@ -114,7 +114,8 @@ Misc.
 
     Font size
         CTRL_x CTRL_-
-        CTRL_x CTRL_S-+
+        CTRL_x CTRL_=
+        CTRL_x CTRL_0
         
     Man page
         CTRL_h F    
@@ -431,7 +432,7 @@ Mode
         M_x org-mode
 
         create table
-            CTRL_c |
+            CTRL_c SHIFT_|
 
         insert new column
             | <TAB>
