@@ -381,6 +381,17 @@ Editing
         
         downcase-word
             M_d
+
+    Input method
+        greek-characters
+        https://stackoverflow.com/questions/10192341/how-to-enter-greek-characters-in-emacs
+
+            M-x set-input-method RET TeX
+                \beta
+                \sum
+
+            It can be toggled on and off with
+                toggle-input-method, bound to C-\
         
     Execute
         shell-command-on-region
