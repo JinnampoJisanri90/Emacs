@@ -30,12 +30,9 @@
  '(truncate-lines t)
  '(xclip-mode nil))
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; aidalgol#emacs -- Enable colour emoji. 😄 🎉
+;; sudo apt-get install -y fonts-symbola
+(set-fontset-font t 'symbol "Symbola" nil 'append)
 
 (require 'package)
 (add-to-list 'package-archives
