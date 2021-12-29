@@ -42,11 +42,13 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+
+;; https://github.com/ppareit/graphviz-dot-mode
+;; sudo yum install graphviz
 (use-package graphviz-dot-mode
              :ensure t
-             :config
-             (setq graphviz-dot-indent-width 4))
-(use-package company-graphviz-dot)
+             :config(setq graphviz-dot-indent-width 4))
+;; (use-package company-graphviz-dot)
 
 ;; To filter out
 ;;     M-x keep-lines with argument ^[A-Z ]+$
