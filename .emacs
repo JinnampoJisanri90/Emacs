@@ -45,6 +45,7 @@
 
 ;; https://github.com/ppareit/graphviz-dot-mode
 ;; sudo yum install graphviz
+;; M_x package-install RET company RET
 (use-package graphviz-dot-mode
              :ensure t
              :config(setq graphviz-dot-indent-width 4))
